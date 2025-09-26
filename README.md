@@ -84,7 +84,8 @@ This is a bug. There cannot exist a case where typescript fails to follow declar
 `tsc` does not offer a way to write declaration files to include extensions
 
 ### There are not alternatives without significant drawbacks
-- `"moduleResolution": "nodenext"` specifically is the problem
+- `"moduleResolution": "nodenext"` specifically is the problem in conjunction with a dependency of `"type": "module"`
+  - If I remove `"type": "module"` from `lib`, everything works as expected, but that isn't an option if I don't own that dependency code
 - Updating `app` to be `"types": "modules"` does not remove the typecheck error
 - Changing to `"moduleResolution": "bundler"` removes the typechecking error, however a cannot target `"module": "commonjs"`
   - Updating to `"module": "esnext"` together with `"types": "modules"` works, however that may not be an option for legacy NodeJS apps
