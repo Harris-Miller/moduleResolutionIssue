@@ -1,3 +1,7 @@
+# Typescript fails to resolve typedefs of type: module dependencies if app is using "moduleResolution": "nodenext"
+
+This repo shows under minimal circumstances that a package configured with `"moduleResolution": "nodenext"` does not correct resolve typedefs deeply in dependency declaration files when those dependencies have are configured with `package.json#type="module"`
+
 ## The Repo
 
 ### `lib` folder
